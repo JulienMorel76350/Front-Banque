@@ -257,7 +257,12 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  width: 100%;
+}
+
+.App-notif a{
+  display:flex;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -369,4 +374,8 @@ h2 {
   font-size: 10px;
   margin: 10px;
   color: #1912f8;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
 }
+

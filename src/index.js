@@ -6,6 +6,7 @@ import "./index.css";
 import App from "./App";
 import Home from "./Home";
 import Compte from "./Compte";
+import Alerte from "./Alerte";
 import CompteDetails from "./Compte[id]";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,6 +20,8 @@ root.render(
       <Route exact path="/home" element={<Home />}></Route>
       <Route exact path="/compte" element={<Compte />}></Route>
       <Route exact path="/compte/:id" element={<CompteDetails />}></Route>
+      <Route exact path="/alerte" element={<Alerte />}></Route>
+
     </Routes>
   </Router>
 );
