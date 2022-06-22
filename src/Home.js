@@ -1,6 +1,6 @@
 import "./App.css";
 
-function About() {
+function Home() {
   return (
     <div className="App">
       <header className="App-header header-blue">
@@ -74,4 +74,4 @@ function About() {
   );
 }
 
-export default About;
+export default Home;
