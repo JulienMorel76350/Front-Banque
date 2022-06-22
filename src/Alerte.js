@@ -11,20 +11,25 @@ function Alerte() {
 
           <div className="App-notif left">
             <a href="./alerte/1">
-              <div className="App-user-name"><p> Total des alertes</p><p>2 alertes</p></div>
+              <div className="App-user-name">
+                <p> Total des alertes</p>
+                <p>2 alertes</p>
+              </div>
             </a>
             <div className="App-notif-item">
               <div className="App-notif-bar"></div>
               <div className="App-notif-container">
-                <div className="App-notif-compte">
-                  <h3>LIVRET A</h3>
-                  <p>0123456789A</p>
-                  <p>Mr Nom Prénom</p>
-                </div>
-                <div className="App-notif-text">
-                  <p>-15,02€</p>
-                  <p>15/05/2022</p>
-                </div>
+                <a href="./alerte/1">
+                  <div className="App-notif-compte">
+                    <h3>LIVRET A</h3>
+                    <p>0123456789A</p>
+                    <p>Mr Nom Prénom</p>
+                  </div>
+                  <div className="App-notif-text">
+                    <p>-15,02€</p>
+                    <p>15/05/2022</p>
+                  </div>
+                </a>
               </div>
             </div>
             <div className="App-notif-item">
