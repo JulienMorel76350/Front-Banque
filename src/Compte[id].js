@@ -1,9 +1,22 @@
 import "./App.css";
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Comptedetails() {
+  const navigate = useNavigate();
+  const navigateTologin = () => {
+    navigate("../../");
+  };
+  function logout() {
+    const cookies = new Cookies();
+    cookies.remove("token");
+    navigateTologin();
+  }
   return (
     <div className="App">
-      <header className="App-header header-blue">Livret A</header>
+      <header className="App-header header-blue">
+        Livret A <img onClick={logout} src="./logout.png" alt="logout" className="logout" />
+      </header>
       <div className="App-container">
         <div className="App-box App-interface">
           <h2>Solde au 21/06/2022</h2>

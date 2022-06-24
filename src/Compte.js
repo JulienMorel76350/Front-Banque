@@ -1,9 +1,22 @@
 import "./App.css";
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Compte() {
+  const navigate = useNavigate();
+  const navigateTologin = () => {
+    navigate("../");
+  };
+  function logout() {
+    const cookies = new Cookies();
+    cookies.remove("token");
+    navigateTologin();
+  }
   return (
     <div className="App">
-      <header className="App-header header-blue">Comptes</header>
+      <header className="App-header header-blue">
+        Comptes <img onClick={logout} src="./logout.png" alt="logout" className="logout" />
+      </header>
       <div className="App-container">
         <div className="App-box App-interface left">
           <h2>Mes comptes</h2>
@@ -44,9 +57,10 @@ function Compte() {
           </div>
           <div className="App-row"></div>
           <div className="App-notif left">
-          <a href="./compte/2">
+            <a href="./compte/2">
               <div className="App-user-name">Mr Nom Prénom</div>
-            </a>            <div className="App-notif-item">
+            </a>{" "}
+            <div className="App-notif-item">
               <div className="App-notif-bar"></div>
               <div className="App-notif-container">
                 <div className="App-notif-compte">

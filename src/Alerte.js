@@ -1,9 +1,22 @@
 import "./App.css";
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Alerte() {
+  const navigate = useNavigate();
+  const navigateTologin = () => {
+    navigate("../");
+  };
+  function logout() {
+    const cookies = new Cookies();
+    cookies.remove("token");
+    navigateTologin();
+  }
   return (
     <div className="App">
-      <header className="App-header header-blue">Alertes</header>
+      <header className="App-header header-blue">
+        Alertes <img onClick={logout} src="./logout.png" alt="logout" className="logout" />
+      </header>
       <div className="App-container">
         <div className="App-box App-interface left">
           <h2>Mes alertes </h2>

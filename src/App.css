@@ -152,6 +152,7 @@ img {
   color: #61dafb;
 }
 .App-title {
+  margin-top: 20px;
   font-size: 20px;
 }
 .App-container {
@@ -169,6 +170,13 @@ img {
   font-size: 24px;
   background-color: #fff;
   color: #000;
+}
+
+.App-header .logout{
+  width: 20px;
+  position: absolute;
+  top: 25%;
+  right:20px;
 }
 
 .App-box {

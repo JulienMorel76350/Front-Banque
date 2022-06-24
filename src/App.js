@@ -1,15 +1,46 @@
 import "./App.css";
-import React from 'react';
+import React from "react";
 import { useForm } from "react-hook-form";
-// import { Link } from "react-router-dom";
+import axios from "axios";
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  const navigateTohome = () => {
+    navigate("/home");
+  };
+  async function loginUser(user, pass) {
+    console.log(user, pass);
+    const url =
+      "http://localhost:9090/users/signin?username=" + user + "&pass=" + pass;
+    axios
+      .post(url)
+      .then((res) => {
+        if (res.data != null) {
+          const cookies = new Cookies();
+          cookies.set("token", res.data, { path: "/" });
+          console.log(cookies.get("token"));
+          if (cookies.get("token") != null) {
+            console.log("ok");
+            navigateTohome();
+          }
+        }else{
+          console.log("vide")
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    loginUser(data.username, data.password);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -44,7 +75,12 @@ function App() {
             </div>
           </form>
         </div>
-        <input type="submit" form="logform" value="Connexion" className="btn-sumbit" />
+        <input
+          type="submit"
+          form="logform"
+          value="Connexion"
+          className="btn-sumbit"
+        />
       </div>
     </div>
   );
