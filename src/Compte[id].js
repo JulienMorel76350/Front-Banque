@@ -15,7 +15,7 @@ function Comptedetails() {
   return (
     <div className="App">
       <header className="App-header header-blue">
-        Livret A <img onClick={logout} src="./logout.png" alt="logout" className="logout" />
+        Livret A <img onClick={logout} src="../logout.png" alt="logout" className="logout" />
       </header>
       <div className="App-container">
         <div className="App-box App-interface">

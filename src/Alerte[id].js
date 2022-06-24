@@ -15,7 +15,7 @@ function Alertedetails() {
   return (
     <div className="App">
       <header className="App-header header-blue">
-        Compte Courant <img onClick={logout} src="./logout.png" alt="logout" className="logout" />
+        Compte Courant <img onClick={logout} src="../logout.png" alt="logout" className="logout" />
       </header>
       <div className="App-container">
         <div className="App-box App-interface">

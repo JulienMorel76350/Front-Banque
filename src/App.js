@@ -21,15 +21,19 @@ function App() {
           const cookies = new Cookies();
           cookies.set("token", res.data, { path: "/" });
           console.log(cookies.get("token"));
-          if (cookies.get("token") != null) {
+          if (cookies.get("token") != null && cookies.get("token") !=="") {
             console.log("ok");
             navigateTohome();
+          }else{
+            document.getElementById("logform").reset();
           }
-        }else{
-          console.log("vide")
+        } else {
+          console.log("vide");
         }
       })
       .catch((err) => {
+        document.getElementById("logform").reset();
+
         console.log(err);
       });
   }
